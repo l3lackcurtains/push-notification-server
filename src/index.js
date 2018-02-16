@@ -19,7 +19,7 @@ app.use('/', express.static(path.join(__dirname, 'public')))
 
 // Database Setup
 mongoose.Promise = global.Promise
-mongoose.connect(config.mdbl)
+mongoose.connect(process.env.MDB)
 const db = mongoose.connection
 db.on('error', () => console.log('[-] Failed to connect to database.'))
     .once('open', () => console.log('[+] Connected to database. '))
