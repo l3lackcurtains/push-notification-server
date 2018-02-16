@@ -45,7 +45,7 @@ app.use('/', _express2.default.static(_path2.default.join(__dirname, 'public')))
 
 // Database Setup
 _mongoose2.default.Promise = global.Promise;
-_mongoose2.default.connect(_config2.default.mdbl);
+_mongoose2.default.connect(process.env.MDB);
 var db = _mongoose2.default.connection;
 db.on('error', function () {
     return console.log('[-] Failed to connect to database.');
